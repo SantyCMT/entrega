@@ -21,3 +21,8 @@ class selecciones(models.Model):
     grupo = models.CharField(max_length=10)
     num_jugadores_convocados = models.IntegerField()
     capitan = models.CharField(max_length=40)
+
+
+class lesionados(models.Model):
+    nom_jug_les = models.CharField(max_length=40)
+    ape_jug_les = models.CharField(max_length=40)

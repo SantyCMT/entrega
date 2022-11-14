@@ -1,0 +1,17 @@
+{% extends "appmundial/base.html" %}
+
+{% block contenido %}
+
+<form action="subir_lesionado/" method="post">
+    {% csrf_token %}
+
+    <p>
+        Nombre del Lesionado <input type="text" name="nombre_lesionado">
+    </p>
+    <p>
+        apellido del Lesionado <input type="text" name="apellido_lesionado">
+    </p>
+        <input type="submit" value="Actualizar">
+</form>
+
+{% endblock %}
