@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import models
-
+from appmundial.models import lesionados
+from appmundial.forms import JugadoresLesionados
 # Create your views here.
 def index(request):
     return render(request,"appmundial/base.html")
@@ -26,10 +26,20 @@ def Lesionados(request):
 def form_Lesionados(request):
 
     if request.method == "POST":
-        nombre_jugador =request.POST["nombre_lesionado"]
-        apellido_jugador =request.POST["apellido_lesionado"]
 
-        lesionados = Lesionados(nombres_jugador=nombre_jugador, apellidos_jugador=apellido_jugador)
-        lesionados.save()
+        formulario = JugadoresLesionados
 
-    return render(request, "appmundial/form_lesionados.html")
+        if formulario.is_valid:
+
+            info=formulario.cleaned_data
+
+            lesion = lesionados(nombres_jugador=info["nombres_jugador"],apellidos_jugador=info["apellidos_jugador"])
+        
+            lesion.save()
+        
+            return render(request,"appmundial/base.html")
+    else:
+        formulario = JugadoresLesionados()
+
+    
+    return render(request, "appmundial/form_lesionados.html", {"formulario": formulario})
