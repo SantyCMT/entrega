@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from appmundial.models import lesionados
-from appmundial.forms import JugadoresLesionados
+from .models import lesionados, Jugadores
+from .forms import JugadoresLesionados
 # Create your views here.
 def index(request):
     return render(request,"appmundial/base.html")
@@ -10,6 +10,19 @@ def index(request):
 def Jugadores(request):
 
     return render(request, "appmundial/jugadores.html")
+
+
+
+
+def busqueda_jugador(request):
+
+    return render(request, "busqueda_jugador.html")
+
+
+def buscar(request):
+    respusta = request.GET["nombres_jugador"]
+    jugadores = Jugadores.object.filter(nombre_icontains=nombres_jugador)
+    return render(request, "appmundial/resultados_busqueda_jugador.html", {"jugadores": jugadores})
 
 def Directores_tecnicos(request):
 
@@ -27,19 +40,22 @@ def form_Lesionados(request):
 
     if request.method == "POST":
 
-        formulario = JugadoresLesionados
+        miFormulario = JugadoresLesionados(request.POST)
 
-        if formulario.is_valid:
+        print(miFormulario)
 
-            info=formulario.cleaned_data
+        if miFormulario.is_valid:
 
-            lesion = lesionados(nombres_jugador=info["nombres_jugador"],apellidos_jugador=info["apellidos_jugador"])
+            info = miFormulario.cleaned_data
+
+            lesion = lesionados(nom_jug_les=info["nombres"], ape_jug_les=info["apellidos"])
         
             lesion.save()
-        
-            return render(request,"appmundial/base.html")
-    else:
-        formulario = JugadoresLesionados()
 
-    
-    return render(request, "appmundial/form_lesionados.html", {"formulario": formulario})
+    else:
+        miFormulario = JugadoresLesionados()
+
+
+    contexto = { "miFormulario" : miFormulario }
+         
+    return render(request, "appmundial/form_lesionados.html", contexto)

@@ -2,10 +2,17 @@
 
 {% block contenido %}
 
-<form action="mundial-subir-lesionados" method="post">
-    {% csrf_token %}
+{% if miFormulario.errors %}
 
-    {{ formulario.as_p }}
+<p style="color:red;"> Estan mal los datos </p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
 
     <input type="submit" value="Cargar lesionado">
 </form>

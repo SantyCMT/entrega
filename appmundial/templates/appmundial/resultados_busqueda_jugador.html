@@ -1,0 +1,12 @@
+{% extends 'appmundial/base.html' %}
+
+
+{% block contenido %}
+
+<ul>
+    {% for jugador in  jugadores %}
+        <li>{{ jugador.nombre }} - {{jugador.camada}} </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
