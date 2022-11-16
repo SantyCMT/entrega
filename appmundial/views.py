@@ -4,7 +4,7 @@ from .models import lesionados, Jugadores, DT, selecciones
 from .forms import JugadoresLesionados
 # Create your views here.
 def index(request):
-    return render(request,"appmundial/base.html")
+    return render(request,"appmundial/index.html")
 
 
 def Jugadores_mundial(request):
