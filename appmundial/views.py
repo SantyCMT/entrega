@@ -23,11 +23,16 @@ def busqueda_jugador(request):
 
 def buscar(request):    
     
-    respuesta = request.GET("respuesta")
+    if request.GET:
+        jugador = request.GET.get("nombres_jugador", "")
+        if jugador == "":
+            lisjugador = []
 
-    jugadores = Jugadores.object.filter(nombre_icontains=respuesta)
+        else:
+            lisjugador = Jugadores.objects.filter(nombre_icontains=jugador)
+        return render( request, "appmundial/resultados_busqueda_jugador.html", {"listajugadores": lisjugador} )
 
-    return render( request, "appmundial/resultados_busqueda_jugador.html", {"jugadores": jugadores} )
+    return render( request, "appmundial/resultados_busqueda_jugador.html", { "listajugadores": []})
 
 
 

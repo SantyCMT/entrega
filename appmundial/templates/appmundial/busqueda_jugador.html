@@ -1,4 +1,4 @@
-{% extends "appmundial/base1.html" %}
+<!-- {% extends "appmundial/base1.html" %}
 
 
 {% block contenido %}
@@ -12,6 +12,13 @@
             </p>
 
         </form>
+        {% if listajugadores %}
+
+        <ul>
+            {% for jugador in listajugadores %}
+                <li> {{ jugador.nombres_jugador }} {{ jugador.apellidos_jugador }} </li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
-{% endblock %}
+{% endblock %} -->
