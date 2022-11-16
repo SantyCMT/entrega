@@ -7,22 +7,26 @@ def index(request):
     return render(request,"appmundial/base.html")
 
 
-def Jugadores(request):
+def Jugadores_mundial(request):
 
     return render(request, "appmundial/jugadores.html")
 
 
 
-
 def busqueda_jugador(request):
 
-    return render(request, "busqueda_jugador.html")
+    return render(request, "appmundial/busqueda_jugador.html")
 
 
-def buscar(request):
-    respusta = request.GET["nombres_jugador"]
-    jugadores = Jugadores.object.filter(nombre_icontains=nombres_jugador)
-    return render(request, "appmundial/resultados_busqueda_jugador.html", {"jugadores": jugadores})
+def buscar(request):    
+    
+    respuesta = request.GET("respuesta")
+
+    jugadores = Jugadores.object.filter(nombre_icontains=respuesta)
+
+    return render( request, "appmundial/resultados_busqueda_jugador.html", {"jugadores": jugadores} )
+
+
 
 def Directores_tecnicos(request):
 

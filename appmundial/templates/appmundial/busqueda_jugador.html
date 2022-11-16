@@ -1,0 +1,15 @@
+{% extends "appmundial/base.html" %}
+
+
+{% block contenido %}
+
+<form action="{% url 'mundial-buscar' %}" method="get">
+
+    <p>
+        Nombre del Jugador: <input type="text" name="respusta">
+        <input type="submit" value="Buscar!">
+    </p>
+
+</form>
+
+{% endblock %}
