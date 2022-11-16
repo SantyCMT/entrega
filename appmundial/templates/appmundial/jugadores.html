@@ -1,40 +1,41 @@
-{% extends "appmundial/base.html" %}
+{% extends "appmundial/base1.html" %}
 
 {% block contenido %}
+<div class="masthead" style="background: rgb(166, 51, 79) ;">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+            }
+            td {
+                text-align: center;
+            }
+        </style>    
 
-<h1>jugadores del mundial de Qatar2022</h1>
-<style type="text/css">
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 10px;
-    }
-    td {
-        text-align: center;
-    }
-</style>    
-
-<table>
-    <thead>
-        <tr>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido</th>
-            <th scope="col">numero</th>
-            <th scope="col">pais</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for jugador in listajugadores %}
-        <tr>
-            <td>{{jugador.nombres_jugador}}</td>
-            <td>{{jugador.apellidos_jugador}}</td>
-            <td>{{jugador.numero_camiseta}}</td>
-            <td>{{jugador.pais_jugador}}</td>
-        {% endfor %}
-        </tr>
-    </tbody>
-</table>
-
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: black;" scope="col">nombre</th>
+                    <th style="color: black;" scope="col">apellido</th>
+                    <th style="color: black;" scope="col">numero</th>
+                    <th style="color: black;" scope="col">pais</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jugador in listajugadores %}
+                <tr>
+                    <td style="color: black;">{{jugador.nombres_jugador}}</td>
+                    <td style="color: black;">{{jugador.apellidos_jugador}}</td>
+                    <td style="color: black;">{{jugador.numero_camiseta}}</td>
+                    <td style="color: black;">{{jugador.pais_jugador}}</td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>  
 {% endblock %}
