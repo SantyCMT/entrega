@@ -9,8 +9,11 @@ def index(request):
 
 def Jugadores_mundial(request):
 
-    return render(request, "appmundial/jugadores.html")
+    jugadores1 = Jugadores.objects.all()
 
+    datos = {"listajugadores" : jugadores1}
+
+    return render(request, "appmundial/jugadores.html",datos)
 
 
 def busqueda_jugador(request):
