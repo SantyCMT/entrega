@@ -3,5 +3,38 @@
 {% block contenido %}
 
 <h1>jugadores del mundial de Qatar2022</h1>
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    td {
+        text-align: center;
+    }
+</style>    
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">numero</th>
+            <th scope="col">pais</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for jugador in listajugadores %}
+        <tr>
+            <td>{{jugador.nombres_jugador}}</td>
+            <td>{{jugador.apellidos_jugador}}</td>
+            <td>{{jugador.numero_camiseta}}</td>
+            <td>{{jugador.pais_jugador}}</td>
+        {% endfor %}
+        </tr>
+    </tbody>
+</table>
 
 {% endblock %}
