@@ -34,8 +34,6 @@ def buscar(request):
 
     return render( request, "appmundial/resultados_busqueda_jugador.html", { "listajugadores": []})
 
-
-
 def Directores_tecnicos(request):
     director = DT.objects.all()
 

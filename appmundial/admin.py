@@ -5,3 +5,4 @@ from appmundial.models import *
 admin.site.register(Jugadores)
 admin.site.register(selecciones)
 admin.site.register(DT)
+admin.site.register(lesionados)
