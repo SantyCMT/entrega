@@ -21,33 +21,24 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{% url 'mundial-inicio' %}">Qatar 2022</a>
+                <a class="navbar-brand" style="color: black ;" href="{% url 'mundial-inicio' %}">Qatar 2022</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'mundial-jugadores' %}">jugadores</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'mundial-directores_Tecn' %}">directores tec.</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'mundialselecciones'%}">selecciones tec.</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-jugadores' %}">jugadores</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-busqueda-jugador' %}">Buscar jugador</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-directores_Tecn' %}">directores tec.</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-selecciones'%}">selecciones tec.</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-lesionados'%}">lesionados</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black ;" href="{% url 'mundial-subir-lesionados'%}">subir lesionado</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Qatar 2022</h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-
+ 
         {% block contenido %}
 
         {% endblock %}

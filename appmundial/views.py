@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import lesionados, Jugadores
+from .models import lesionados, Jugadores, DT
 from .forms import JugadoresLesionados
 # Create your views here.
 def index(request):
@@ -32,8 +32,11 @@ def buscar(request):
 
 
 def Directores_tecnicos(request):
+    director = DT.objects.all()
 
-    return render(request, "appmundial/directores_tec.html")
+    datos = { "listasdirectores" : director }
+
+    return render(request, "appmundial/directores_tec.html", datos)
 
 def Selecciones(request):
 
