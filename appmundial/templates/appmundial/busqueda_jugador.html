@@ -1,15 +1,17 @@
-{% extends "appmundial/base.html" %}
+{% extends "appmundial/base1.html" %}
 
 
 {% block contenido %}
+<div class="masthead" style="background: rgb(166, 51, 79) ;">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <form action="{% url 'mundial-buscar' %}" method="get">
 
-<form action="{% url 'mundial-buscar' %}" method="get">
+            <p>
+                Nombre del Jugador: <input type="text" name="respusta">
+                <input type="submit" value="Buscar!">
+            </p>
 
-    <p>
-        Nombre del Jugador: <input type="text" name="respusta">
-        <input type="submit" value="Buscar!">
-    </p>
-
-</form>
-
+        </form>
+    </div>
+</div>
 {% endblock %}

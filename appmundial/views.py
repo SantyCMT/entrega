@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import lesionados, Jugadores, DT
+from .models import lesionados, Jugadores, DT, selecciones
 from .forms import JugadoresLesionados
 # Create your views here.
 def index(request):
@@ -39,12 +39,19 @@ def Directores_tecnicos(request):
     return render(request, "appmundial/directores_tec.html", datos)
 
 def Selecciones(request):
+    seleccion = selecciones.objects.all()
 
-    return render(request, "appmundial/selecciones.html")
+    datos =  { "listasselecciones" : seleccion }
+
+    return render(request, "appmundial/selecciones.html", datos)
     
 def Lesionados(request):
 
-    return render(request, "appmundial/lesionados.html")
+    lesion = lesionados.objects.all()
+
+    datos =  { "listaslesionados" : lesion }
+
+    return render(request, "appmundial/lesionados.html",datos)
 
 def form_Lesionados(request):
 

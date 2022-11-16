@@ -1,7 +1,41 @@
-{% extends "appmundial/base.html" %}
+{% extends "appmundial/base1.html" %}
 
 {% block contenido %}
 
-<h1>Selecciones del mundial de Qatar2022</h1>
+<div class="masthead" style="background: rgb(166, 51, 79) ;">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+            }
+            td {
+                text-align: center;
+            }
+        </style>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Grupo</th>
+                    <th scope="col">Jugadores comvocados</th>
+                    <th scope="col">Capitan</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for seleccion in listasselecciones %}
+                <tr>
+                    <td>{{seleccion.grupo}}</td>
+                    <td>{{seleccion.num_jugadores_convocados}}</td>
+                    <td>{{seleccion.capitan}}</td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+</div>  
 
 {% endblock %}
