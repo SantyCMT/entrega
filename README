@@ -1,0 +1,12 @@
+Entrega intermedia de CoderHouse
+
+usuario de administrador: USER: santiago PASSWORD: admin1234
+urls: INICIO:""
+      JUGADORES: "jugadores/"
+      BUSCAR JUGADOR: "buscar/"
+      DIRECTORES TECNICOS: "directores_Tecn/"
+      SELECCIONES: "selecciones/"
+      LESIONADOS: "lesionados/"
+      CARGAR UN LESIONADO: "subir_lesionado/"
+      
+Santiago Ortiz
