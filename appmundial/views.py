@@ -24,15 +24,15 @@ def busqueda_jugador(request):
 def buscar(request):    
     
     if request.GET:
-        jugador = request.GET.get("nombres_jugador", "")
+        jugador = request.GET.get("respuesta", "")
         if jugador == "":
             lisjugador = []
 
         else:
-            lisjugador = Jugadores.objects.filter(nombre_icontains=jugador)
-        return render( request, "appmundial/resultados_busqueda_jugador.html", {"listajugadores": lisjugador} )
+            lisjugador = Jugadores.objects.filter(nombres_jugador=jugador)
+        return render( request, "appmundial/busqueda_jugador.html", {"listajugadores": lisjugador} )
 
-    return render( request, "appmundial/resultados_busqueda_jugador.html", { "listajugadores": []})
+    return render( request, "appmundial/busqueda_jugador.html", { "listajugadores": []})
 
 def Directores_tecnicos(request):
     director = DT.objects.all()

@@ -1,4 +1,4 @@
-<!-- {% extends "appmundial/base1.html" %}
+{% extends "appmundial/base1.html" %}
 
 
 {% block contenido %}
@@ -7,7 +7,7 @@
         <form action="{% url 'mundial-buscar' %}" method="get">
 
             <p>
-                Nombre del Jugador: <input type="text" name="respusta">
+                Nombre del Jugador: <input type="text" name="respuesta">
                 <input type="submit" value="Buscar!">
             </p>
 
@@ -19,6 +19,8 @@
                 <li> {{ jugador.nombres_jugador }} {{ jugador.apellidos_jugador }} </li>
             {% endfor %}
         </ul>
+
+        {% endif %}
     </div>
 </div>
-{% endblock %} -->
+{% endblock %}
