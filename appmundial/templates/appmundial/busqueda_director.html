@@ -1,0 +1,26 @@
+{% extends "appmundial/base3.html" %}
+
+
+{% block contenido %}
+<div class="masthead" style="background: rgb(166, 51, 79) ;">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <form action="{% url 'mundial-directores_Tecn-buscar' %}" method="get">
+
+            <p>
+                Nombre del DT: <input type="text" name="nombre_dt">
+                <input type="submit" value="Buscar!">
+            </p>
+
+        </form>
+        {% if listaDirector %}
+
+        <ul>
+            {% for dt in listaDirector %}
+                <li> {{ dt.nombre_dt }} {{ dt.apellido_dt }} </li>
+            {% endfor %}
+        </ul>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

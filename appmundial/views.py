@@ -36,6 +36,20 @@ def Directores_tecnicos(request):
 
     return render(request, "appmundial/directores_tec.html", datos)
 
+def buscar_director_tecnico(request):
+
+    if request.GET:
+        director = request.GET.get("nombre_dt", "")
+        if director == "":
+            list_director = []
+
+        else:
+            list_director = DT.objects.filter(nombre_dt=director)
+        return render(request, "appmundial/busqueda_director.html", {"listaDirector": list_director})
+    
+    return render(request, "appmundial/busqueda_director.html", {"listaDirector": [] })
+    
+
 def Selecciones(request):
     seleccion = selecciones.objects.all()
 
