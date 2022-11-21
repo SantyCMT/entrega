@@ -20,6 +20,7 @@
         <table>
             <thead>
                 <tr>
+                    <th scope="col">Pais</th>
                     <th scope="col">Grupo</th>
                     <th scope="col">Jugadores comvocados</th>
                     <th scope="col">Capitan</th>
@@ -28,6 +29,7 @@
             <tbody>
                 {% for seleccion in listasselecciones %}
                 <tr>
+                    <td>{{seleccion.nombre_seleccion}}</td>
                     <td>{{seleccion.grupo}}</td>
                     <td>{{seleccion.num_jugadores_convocados}}</td>
                     <td>{{seleccion.capitan}}</td>

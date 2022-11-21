@@ -18,6 +18,7 @@ class DT(models.Model):
 
 
 class selecciones(models.Model):
+    nombre_seleccion = models.CharField(max_length=40,null=True)
     grupo = models.CharField(max_length=10)
     num_jugadores_convocados = models.IntegerField()
     capitan = models.CharField(max_length=40)
