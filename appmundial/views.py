@@ -16,11 +16,6 @@ def Jugadores_mundial(request):
     return render(request, "appmundial/jugadores.html",datos)
 
 
-def busqueda_jugador(request):
-
-    return render(request, "appmundial/busqueda_jugador.html")
-
-
 def buscar(request):    
     
     if request.GET:
