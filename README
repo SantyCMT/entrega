@@ -3,10 +3,23 @@ Entrega intermedia de CoderHouse
 usuario de administrador: USER: santiago PASSWORD: admin1234
 urls: INICIO:""
       JUGADORES: "jugadores/"
-      BUSCAR JUGADOR: "buscar/"
+      BUSCAR JUGADOR: "jugadores/buscar/"
+      AGREGAR JUGADOR: "jugadores/agregar/"
       DIRECTORES TECNICOS: "directores_Tecn/"
+      BUSCAR DIRECTOR TECNICO: "directores_Tecn/buscar/"
+      AGREGAR DIRECTOR TECNICO: "directores_Tecn/agregar/"
       SELECCIONES: "selecciones/"
+      AGREGAR SELECCION: "selecciones/agregar/"
       LESIONADOS: "lesionados/"
       CARGAR UN LESIONADO: "subir_lesionado/"
       
+
+
+NAVEGAR:
+      JUGADORES contiene: una lista de jugadores y una barra de navegacion con las opciones de "Agregar Jugador, buscar jugador y lesionados (lesionados contiene subir lesionado)"
+
+      DIRECTORES TECNICOS contiene: una lista de los directores tecnicos y una barra de navegacion con las opciones de "Buscar director tec. y Agregar Dt"
+
+      SELECCIONES contiene: una lista de las selecciones del mundial y una barra de navegacion con las opciones de "Agregar Seleccion"
+
 Santiago Ortiz
