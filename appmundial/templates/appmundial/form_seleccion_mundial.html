@@ -1,0 +1,35 @@
+{% extends "appmundial/base1.html" %}
+
+{% block contenido %}
+
+{% if miFormulario.errors %}
+
+<p style="color:red;"> Estan mal los datos </p>
+
+{% endif %}
+
+<div class="masthead" style="background: rgb(166, 51, 79) ;">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+            }
+            td {
+                text-align: center;
+            }
+        </style>
+        <form action="" method="POST">{% csrf_token %}
+            <h4 style="color: black;">subir seleccion</h4>
+            <table>
+                {{ formseleccion.as_table }}
+            </table>
+
+            <input type="submit" value="Cargar seleccion">
+        </form>
+    </div>
+</div>  
+{% endblock %}

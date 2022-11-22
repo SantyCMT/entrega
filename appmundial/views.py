@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import lesionados, Jugadores, DT, selecciones
-from .forms import JugadoresLesionados, Jugadores_Mundial, Director_tecnico_mundial
+from .forms import JugadoresLesionados, Jugadores_Mundial, Director_tecnico_mundial, seleccion_mundial
 # Create your views here.
 def index(request):
     return render(request,"appmundial/index.html")
@@ -126,9 +126,9 @@ def form_director_tecnico(request):
 
             info = formdirector_tecnico.cleaned_data
 
-            jugador = DT( nombre_dt=info["nombre_dt"], apellido_dt=info["apellido_dt"], pais_dt=info["pais_dt"], seleccion_representada=info["seleccion_representada"])
+            director = DT( nombre_dt=info["nombre_dt"], apellido_dt=info["apellido_dt"], pais_dt=info["pais_dt"], seleccion_representada=info["seleccion_representada"])
 
-            jugador.save()
+            director.save()
 
     else:
         formdirector_tecnico = Director_tecnico_mundial()
@@ -136,3 +136,27 @@ def form_director_tecnico(request):
     contexto = { "formdirector_tecnico" : formdirector_tecnico}
     
     return render(request, "appmundial/form_director_tecnico_mundial.html", contexto)
+
+
+
+def form_Seleccion(request):
+
+    if request.method == "POST":
+
+        formseleccion = seleccion_mundial(request.POST)
+        print(formseleccion)
+
+        if formseleccion.is_valid():
+
+            info = formseleccion.cleaned_data
+
+            seleccion = selecciones( nombre_seleccion=info["nombre_seleccion"], grupo=info["grupo"], num_jugadores_convocados=info["num_jugadores_convocados"], capitan=info["capitan"])
+
+            seleccion.save()
+
+    else:
+        formseleccion = seleccion_mundial()
+
+    contexto = { "formseleccion" : formseleccion}
+    
+    return render(request, "appmundial/form_seleccion_mundial.html", contexto)

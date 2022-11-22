@@ -19,3 +19,9 @@ class Director_tecnico_mundial(forms.Form):
     apellido_dt = forms.CharField(max_length=40)
     pais_dt = forms.CharField(max_length=40)
     seleccion_representada = forms.CharField(max_length=40)
+
+class seleccion_mundial(forms.Form):
+    nombre_seleccion = forms.CharField(max_length=40)
+    grupo = forms.CharField(max_length=10)
+    num_jugadores_convocados = forms.IntegerField()
+    capitan = forms.CharField(max_length=40)
